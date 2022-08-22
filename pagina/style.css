@@ -1,0 +1,212 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    scroll-behavior: smooth;
+    font-family: "Popins", sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(0deg, rgba(207,224,255,1) 0%, rgba(130,127,209,1) 100%);
+}
+
+header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 70px 30px 50px;
+    /* border: 2px solid #f00; */
+    display: flex;
+    object-fit: center;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo{
+    width: 12vmax;
+    max-width: 100px;
+    cursor: pointer;
+    /* filter: drop-shadow(0px 2px 5px #ffffff5e); */
+    filter:invert(80%);
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav ul li{
+    list-style: none;
+    margin-left: 15px;
+    user-select: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    font-size: 15px;
+    padding: 6px 15px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    color: #110011;
+}
+
+nav ul li a:hover{
+    background-color: #ddccdd21;
+    border: 1px solid #ffffff79;
+    color: #110011;
+}
+
+nav ul li a.active{
+    background-color: #f00;
+    color: blue;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    overflow: hidden;
+}
+
+section::before{    /** esto hace un degrade entre una parte y la otra*/
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #1C0522, transparent);
+    z-index: 10;
+}
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#slogan{
+    position: absolute;
+    color: #110011;
+    font-size: 7vmax;
+    text-align: center;
+    font-family: "Rancho", sans-serif;
+    line-height: .8em;
+    white-space: nowrap;
+    transform: translateY(-160px);
+    -webkit-transform: translateY(-160px);
+    -moz-transform: translateY(-160px);
+    -ms-transform: translateY(-160px);
+    -o-transform: translateY(-160px);
+    margin-left: 10vw;
+    z-index: 110;
+}
+
+#btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    background-color: #110011;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    transform: translateY(20px) translateX(60px);
+    -webkit-transform: translateY(20px) translateX(60px);
+    -moz-transform: translateY(20px) translateX(60px);
+    -ms-transform: translateY(20px) translateX(60px);
+    -o-transform: translateY(20px) translateX(60px);
+    z-index:110;
+}
+
+#btn:hover{
+    background: #3d003d;
+}
+
+.sec{
+    background-color: #1c0522;
+    position: relative;
+    padding: 80px;
+}
+
+.sec h2{
+    font-size: 3.5vw;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.sec h3{
+    font-size: 2vw;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sec p{
+    font-size: 1.2em;
+    color: #fff;
+}
+
+@media (max-width:991px){
+    .sec{
+        padding: 60px;
+    } 
+
+    .sec p{
+        font-size: 1em;
+    }
+
+    .menuList{
+        opacity: 0;
+    }
+
+    nav ul{
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    nav.active ul{
+        position: relative;
+        top: 50px;
+        margin-left: -150px;
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu{
+        position: absolute;right: 40px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background: url(img-especial/lista.svg) no-repeat center;
+        background-size: 25px;
+    }
+
+    .menu.active{
+        background: url(img-especial/close.svg) no-repeat center;
+        background-size: 25px;
+    }
+}
